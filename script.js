@@ -82,10 +82,15 @@ function showSlide(carousel,index){
 function initCarousels(){
   document.querySelectorAll('[data-carousel]').forEach(carousel=>{
     carousel.dataset.index='0';
-    carousel.querySelector('.carousel-prev')?.addEventListener('click',()=>showSlide(carousel,Number(carousel.dataset.index)-1));
-    carousel.querySelector('.carousel-next')?.addEventListener('click',()=>showSlide(carousel,Number(carousel.dataset.index)+1));
+    let timer;const interval=Number(carousel.dataset.autoplay||0);
+    const restart=()=>{clearInterval(timer);if(interval>0&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>showSlide(carousel,Number(carousel.dataset.index)+1),interval)};
+    carousel.querySelector('.carousel-prev')?.addEventListener('click',()=>{showSlide(carousel,Number(carousel.dataset.index)-1);restart()});
+    carousel.querySelector('.carousel-next')?.addEventListener('click',()=>{showSlide(carousel,Number(carousel.dataset.index)+1);restart()});
     let startX=0;carousel.addEventListener('touchstart',event=>startX=event.changedTouches[0].clientX,{passive:true});
-    carousel.addEventListener('touchend',event=>{const distance=event.changedTouches[0].clientX-startX;if(Math.abs(distance)>45)showSlide(carousel,Number(carousel.dataset.index)+(distance<0?1:-1))},{passive:true});
+    carousel.addEventListener('touchend',event=>{const distance=event.changedTouches[0].clientX-startX;if(Math.abs(distance)>45){showSlide(carousel,Number(carousel.dataset.index)+(distance<0?1:-1));restart()}},{passive:true});
+    carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);
+    carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);
+    document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):restart());restart();
   });
 }
 
