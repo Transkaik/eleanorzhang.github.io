@@ -242,12 +242,17 @@ footer span {
 .sports-detail-page .detail-content{background:linear-gradient(180deg,#fcfaf7,#f7f6f2)}
 .sports-detail-page .detail-module{max-width:1240px}
 .sport-detail-module h3{margin:0;font:400 clamp(1.45rem,2.2vw,2rem)/1.1 var(--serif)}
-.sports-gallery-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .sports-media-section{min-width:0}
-.sports-media-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}
+.sports-media-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
 .sports-media-heading .sub-label{margin:0}
+.media-meta{margin:0;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 .sports-carousel{position:relative;border-radius:14px;overflow:hidden;background:#17151b;box-shadow:0 16px 44px rgba(39,36,43,.12)}
 .sports-carousel .slides{aspect-ratio:4/3;background:#17151b}
+.competition-gallery{width:100%;margin-bottom:64px}
+.competition-gallery .slides{aspect-ratio:16/9}
+.competition-gallery .sports-carousel{border-radius:18px;box-shadow:0 24px 64px rgba(39,36,43,.16)}
+.skating-support-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;padding:34px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.72)}
+.assistant-video-card{align-self:end}
 .sports-carousel-wide{max-width:980px;margin:0 auto}
 .sports-carousel-wide .slides{aspect-ratio:16/9}
 .sports-carousel img{object-position:center}
@@ -256,7 +261,7 @@ footer span {
 .sports-carousel .carousel-next{right:0;background:linear-gradient(270deg,rgba(15,14,18,.58),rgba(15,14,18,.12))}
 .sports-carousel .carousel-prev:hover,.sports-carousel .carousel-next:hover,.sports-carousel .carousel-prev:focus-visible,.sports-carousel .carousel-next:focus-visible{opacity:1;background:rgba(232,93,145,.78)}
 .sports-carousel .carousel-count{right:14px;bottom:12px;padding:3px 8px;border-radius:999px;background:rgba(15,14,18,.58);letter-spacing:.08em}
-.sports-video-grid{display:grid;grid-template-columns:1fr 1fr .62fr;gap:22px;align-items:start;margin-top:54px}
+.skating-event-videos{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,.55fr);gap:30px;align-items:center;margin-top:64px;padding-top:54px;border-top:1px solid var(--line)}
 .sports-video-card{margin:0;min-width:0}
 .sports-video-frame{position:relative;overflow:hidden;border-radius:14px;background:#17151b;box-shadow:0 16px 44px rgba(39,36,43,.12)}
 .sports-video-frame.landscape{aspect-ratio:16/9}
@@ -269,5 +274,5 @@ footer span {
 .media-pending p{position:absolute;z-index:1;left:18px;right:18px;bottom:16px;margin:0;color:#fff;font-size:12px;letter-spacing:.06em;text-align:center}
 .sports-dancing-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start}
 .sports-dancing-layout .sports-carousel .slides{aspect-ratio:4/3}
-@media(max-width:900px){.sports-gallery-pair,.sports-video-grid,.sports-dancing-layout{grid-template-columns:1fr}.sports-video-grid .portrait-card{max-width:360px;margin:0 auto}.sports-video-frame.portrait{width:min(100%,330px)}.sports-dancing-layout .sports-video-card{max-width:680px;width:100%;margin:0 auto}}
-@media(max-width:767px){.sports-gallery-pair{gap:48px}.sports-carousel .carousel-prev,.sports-carousel .carousel-next{width:42px;height:62px;font-size:42px}.sports-video-grid{margin-top:44px}.sports-detail-page .detail-module{padding-left:20px;padding-right:20px}}
+@media(max-width:900px){.skating-support-grid,.skating-event-videos,.sports-dancing-layout{grid-template-columns:1fr}.skating-event-videos .portrait-card{max-width:360px;margin:0 auto}.sports-video-frame.portrait{width:min(100%,330px)}.sports-dancing-layout .sports-video-card{max-width:680px;width:100%;margin:0 auto}}
+@media(max-width:767px){.competition-gallery{margin-bottom:44px}.skating-support-grid{gap:38px;padding:20px}.skating-event-videos{margin-top:48px;padding-top:42px}.sports-carousel .carousel-prev,.sports-carousel .carousel-next{width:42px;height:62px;font-size:42px}.sports-detail-page .detail-module{padding-left:20px;padding-right:20px}.media-meta{display:none}}
