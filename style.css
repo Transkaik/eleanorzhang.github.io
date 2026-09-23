@@ -212,41 +212,28 @@ footer span {
 
 /* The full name needs a stable flex basis so the navigation cannot squeeze it. */
 .site-header > .wordmark {
-  flex: 0 0 44px;
-  width: 44px;
-  min-width: 44px;
-  max-width: 44px;
-  padding: 0;
+  flex: 0 0 96px;
+  width: 96px;
+  min-width: 96px;
+  max-width: 96px;
+  padding: 0 14px;
   overflow: hidden;
   text-overflow: clip;
 }
 
-/* Marketing imagery is editorial support, not a full-bleed hero. */
-#marketing-intern > .placeholder-image {
-  width: 42%;
-  max-width: 420px;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: 16 / 9;
-  margin: 28px auto 0;
-  border-radius: 10px;
-}
+/* Match Marketing Intern media to Kettle Recipe's 16:9 media-wide frame. */
+#marketing-intern > .marketing-media {width:100%;margin-top:28px}
 
-#marketing-intern > .placeholder-image img {
-  min-height: 0;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
+/* Keep the documentary frame and its image centered in the Visual section. */
+#documentary > .cinema {width:100%;max-width:var(--max);margin-left:auto;margin-right:auto}
+#documentary > .cinema img {object-position:center center}
 
 @media (max-width: 767px) {
   .site-header > .wordmark {
-    flex-basis: 44px;
-    width: 44px;
-    min-width: 44px;
-    max-width: 44px;
-  }
-
-  #marketing-intern > .placeholder-image {
-    width: 100%;
+    flex-basis: 88px;
+    width: 88px;
+    min-width: 88px;
+    max-width: 88px;
+    padding:0 11px;
   }
 }
